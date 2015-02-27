@@ -22,10 +22,8 @@
     <div class="message">{{message}}</div>
     <input value="Ajoute un potager" type="button" ng-click="addPotager()" />
     <input value="récupere la liste des potagers" type="button" ng-click="getAllPotager()" />
-    <div class="potager" ng-repeat="potager in potagers">potager: {{ potager.name }}
-        <button value="supprimer" type="button" ng-click="deletePotager(potager.key)">supprimer</button>
-        <button value="supprimer" type="button" ng-click="potager.showMore = ! potager.showMore">plus d'info</button>
-        <span ng-show="potager.showMore">{{potager.info}}</span>
+    <div class="potager" ng-repeat="plante in plantes">plante: {{ plante.name }}
+        <button value="supprimer" type="button" ng-click="deletePotager(plante.key)">supprimer</button>
     </div>
 
 </body>

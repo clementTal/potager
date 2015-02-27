@@ -4,9 +4,26 @@ function MainCtrl($scope, Service)
     $scope.addPotager = function()
     {
         $scope.message = "";
-        Service.add(function(result)
+        var plante = {
+            nom: "carotte",
+            FamillePlante: "carotte",
+            SoleilPlante: "soleil",
+            TypePlante: "carotte",
+            cycleCulture: "cycleCulture",
+            hauteurPlante: 1,
+            nbCarreRequis: 2,
+            quantiteCarre: 1,
+            recolte: [1, 2],
+            semisTerre: [1, 2],
+            semisTerreProtection:[1, 2],
+            sol: "sol",
+            tempsOccupationCarre: 0,
+            tempsRotationCarre: 0,
+            variete:"racine"
+        }
+        Service.add(plante, function(result)
         {
-            $scope.message = "un potager a bien été ajouté";
+            $scope.message = "une plante a bien été ajouté";
             $scope.getAllPotager();
         });
     };
@@ -15,8 +32,8 @@ function MainCtrl($scope, Service)
     {
         Service.list(function(result)
         {
-            $scope.potagers = result.potager;
-            Angular.forEach($scope.potagers, function(potager) {
+            $scope.plantes = result.plantes;
+            Angular.forEach($scope.plantes, function(potager) {
                 potager.showMore = false;
             })
 

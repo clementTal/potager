@@ -5,10 +5,10 @@
 angular.module('services', ['ngResource'])
     .factory('Service', function ($resource)
     {
-        return $resource('service/:key', {},
+        return $resource('api/plante/:key', {},
             {
-                list: {method:'GET', params:{}, isArray:false},
-                add: {method:'PUT', params:{}, isArray:false},
+                list: {method:'GET', params:{key: "list"}, isArray:false},
+                add: {method:'POST', params:{key: "add"}, isArray:false},
                 delete: {method:'DELETE', params:{key: 'key'}, isArray:false}
             });
     })

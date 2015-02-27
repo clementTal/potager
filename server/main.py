@@ -3,8 +3,7 @@ import os
 import jinja2
 import webapp2
 from google.appengine.ext.webapp.util import run_wsgi_app
-from server.service import Service
-
+from server.plante.plante_service import PlanteService
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(os.path.dirname(__file__))),
@@ -20,7 +19,7 @@ class MainHandler(webapp2.RequestHandler):
 
 application = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/service.*', Service)
+    ('/api/plante.*', PlanteService)
 ], debug=True)
 
 

@@ -21,9 +21,6 @@ handlers:
 - url: /css
   static_dir: css
 
-- url: /img
-  static_dir: img
-
 - url: /templates
   static_dir: templates
 
@@ -31,7 +28,7 @@ handlers:
   script: server.main.application
   secure: always
 
-- url: /service.*
+- url: /api.*
   script: server.main.application
 
 libraries:
