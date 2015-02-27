@@ -17,6 +17,24 @@
   <script src="/js/app.js" ></script>
   <script src="/js/services.js" ></script>
   <script src="/js/main.js" ></script>
+
+    <style>
+        @font-face {
+          font-family: 'SegoeUISymbol';
+          src: url('/css/fonts/seguisym.eot');
+          src: url('/css/fonts/seguisym.eot?#iefix') format('embedded-opentype'), url('/css/fonts/seguisym.woff') format('woff'), url('/css/fonts/seguisym.ttf') format('truetype'), url('/css/fonts/seguisym.svg#@SegeoUISymbol') format('svg');
+        }
+        .icone{
+            font-family:'SegoeUISymbol';
+            text-align: center;
+            border-style: solid;
+            border-color: transparent;
+            display: inline-block;
+        }
+        .icone.fax:before{
+            content: "\1F4E0";
+        }
+    </style>
 </head>
 <body ng-controller="MainCtrl">
     <div class="message">{{message}}</div>
@@ -25,6 +43,7 @@
     <div class="potager" ng-repeat="plante in plantes">plante: {{ plante.name }}
         <button value="supprimer" type="button" ng-click="deletePotager(plante.key)">supprimer</button>
     </div>
+<div class="icone fax"></div>
 
 </body>
 </html>
